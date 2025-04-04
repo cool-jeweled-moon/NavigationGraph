@@ -14,6 +14,14 @@ public struct NavigationGraphView<Route: NavigationGraphRoute>: View {
     @ViewBuilder
     let routeBuilder: (Route) -> any View
 
+    public init(
+        node: NavigationGraphNode<Route>,
+        routeBuilder: @escaping (Route) -> any View
+    ) {
+        self.node = node
+        self.routeBuilder = routeBuilder
+    }
+
     public var body: some View {
         NavigationStack(path: $node.path) {
             AnyView(routeBuilder(node.root))

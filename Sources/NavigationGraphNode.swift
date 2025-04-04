@@ -8,9 +8,9 @@
 import SwiftUI
 
 @Observable
-class NavigationGraphNode<Route: NavigationGraphRoute>: Identifiable {
+public class NavigationGraphNode<Route: NavigationGraphRoute>: Identifiable {
 
-    let id: String = UUID().uuidString
+    public let id: String = UUID().uuidString
 
     var navigationHash: Int {
         var hasher = Hasher()

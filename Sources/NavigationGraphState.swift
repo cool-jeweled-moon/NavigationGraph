@@ -10,9 +10,9 @@ import Foundation
 @Observable
 public class NavigationGraphState<Route: NavigationGraphRoute> {
 
-    let root: NavigationGraphNode<Route>
+    public let root: NavigationGraphNode<Route>
 
-    init(root: Route) {
+    public init(root: Route) {
         self.root = NavigationGraphNode(root: root)
     }
 
@@ -24,23 +24,23 @@ public class NavigationGraphState<Route: NavigationGraphRoute> {
         return currentNode
     }
 
-    func navigate(to route: Route) {
+    public func navigate(to route: Route) {
         currentNode.navigate(to: route)
     }
 
-    func sheet(_ route: Route) {
+    public func sheet(_ route: Route) {
         currentNode.sheet(route)
     }
 
-    func fullScreen(_ route: Route) {
+    public func fullScreen(_ route: Route) {
         currentNode.fullScreen(route)
     }
 
-    func dismiss() {
+    public func dismiss() {
         currentNode.dismiss()
     }
 
-    func dismissToRoot() {
+    public func dismissToRoot() {
         root.dismiss()
     }
 }
